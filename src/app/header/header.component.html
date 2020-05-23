@@ -1,0 +1,44 @@
+
+<header class="header">
+  <div class="header-top">
+    <div class="wrapper">
+      <div class="top-callus">Call Us +44 234567889</div>
+      <ul class="top-links">
+        <li><a [routerLink]="['/myaccount']" routerLinkActive="router-link-active" >My Account</a></li>
+        <li><a (click)="openLoginModal();" >Login</a></li>
+        <li><a (click)="openSignupModal()" >Signup</a></li>
+        <li><a href="javascript:;">FAQ</a></li>
+        <li><a href="javascript:;">Help</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="header-btm">
+    <div class="wrapper">
+      <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="Sweet Shop logo" /></a>
+      <div class="locations-section">
+        <i><img src="assets/img/lications-icon.png" alt="" /></i>
+        <select>
+          <option>Indiranagar Bengalur, Karnataka, India</option>
+        </select>
+      </div>
+      <aside class="header-right">
+        <span class="respo_menu" (click)="toggleMenu();"><i class="fa fa-bars" aria-hidden="true"></i>MENU</span>
+        <nav class="nav">
+          <div class="respo_close" (click)="toggleMenu();" *ngIf="showrResponsiveMenu">&#10006;</div>
+          <ul class="menu" [ngClass]="{'goright' : showrResponsiveMenu}">
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active" >Home</a></li>
+            <li><a [routerLink]="['/aboutus']" routerLinkActive="router-link-active" >About</a></li>
+            <li class="sub-menu"><a [routerLink]="['/product-list']">Products </a></li>
+            <li><a href="javascript:;">Services</a></li>
+            <li><a href="javascript:;">Gifts</a></li>
+          </ul>
+        </nav>
+        <ul class="ecommerce-links" *ngIf="showrResponsiveMenu">
+          <li><a [routerLink]="['/']"><img src="assets/img/ecommerce-icon1.png" alt="" /></a></li>
+          <li><a [routerLink]="['/aboutus']"><img src="assets/img/ecommerce-icon2.png" alt="" /></a></li>
+          <li><a href="javascript:;"><img src="assets/img/ecommerce-icon3.png" alt="" /></a></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</header>

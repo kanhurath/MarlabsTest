@@ -1,0 +1,13 @@
+<div class="popular-product-list">
+  <div class="product-img"><a [routerLink]="['/product-detail', product.id]"><img src="{{product.img}}" alt="Sweet Shop product" /></a></div>
+  <h3>{{product.name}}</h3>
+  <p>{{product.desc}}</p>
+  <div class="act-div">
+    <div class="price-weight">
+      <span class="weight-box">{{product.weight}}</span>
+      <span class="price-box"><i class="fa fa-inr" aria-hidden="true"></i>
+        {{product.price}}</span>
+    </div>
+    <a href="javascript:;" class="btn-3">Add to Cart</a>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="modal-header">
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h2 class="modal-title text-center" style="display: block; text-align: center;">Sign Up</h2>
+</div>
+<div class="modal-body">
+  <h4>or <a href="javascript:;" (click)="openLoginModal()">Login to your account</a></h4>
+<div class="container login-form">
+    <form (ngSubmit)="onSubmit();" [formGroup]="signupForm" method="post">
+        <div class="form-group">
+          <label for="mbnumber" class="text-info">Mobile number:</label>
+          <input type="text" formControlName="mbnumber" class="form-control" placeholder="9853449993"/>
+          <div *ngIf="submitted && f.mbnumber.errors" style="color: red;">
+            <div *ngIf="f.mbnumber.errors.required">Mob number is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name" class="text-info">Name:</label>
+          <input type="text" formControlName="name" class="form-control" placeholder="Kanhu charan rath"/>
+                   <div *ngIf="submitted && f.name.errors" style="color: red;">
+            <div *ngIf="f.name.errors.required">Name is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="username" class="text-info">Email:</label>
+          <input type="text" formControlName="username" class="form-control" placeholder="kanhucharanrath14@gmail.com"/>
+                   <div *ngIf="submitted && f.username.errors" style="color: red;">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+          </div>
+        </div>
+        <div class="form-group border-b-1">
+          <label for="password" class="text-info">Password:</label>
+          <input type="password" formControlName="password" class="form-control" placeholder="kanhu123" />
+          <a href="javascript:;" class="forgot-link">show</a>
+          <div *ngIf="submitted && f.password.errors" style="color: red;">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+          </div>
+        </div>
+        <div class="action-section">
+            <button [disabled]="loading" class="btn-5">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              Continue
+            </button>
+            <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+        </div>
+    </form>
+  <h4>By creating an account, i accept the <a hreh="javascript:;">Terms & Conditions</a></h4>
+</div>
+</div>
