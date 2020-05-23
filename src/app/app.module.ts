@@ -13,13 +13,13 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { CheckoutComponent } from './checkout/checkout.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { CheckoutComponent } from './product/checkout/checkout.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { SignupComponent } from './signup/signup.component';
 import { MyAccountComponent } from './my-account/my-account.component';
-import { ProductCardComponent } from './product-card/product-card.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { ProductCardComponent } from './product/product-card/product-card.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
 
 
 @NgModule({

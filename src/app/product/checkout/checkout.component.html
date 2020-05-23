@@ -1,0 +1,33 @@
+<div class="mid-wrapper">
+  <div class="checkout-page">
+    <div class="checkout-progress-bar">
+      <div class="progress-bar-tab active"><span class="num-box">1</span> Review & Schedule</div>
+      <div class="progress-bar-tab"><span class="num-box">2</span> Select Address</div>
+      <div class="progress-bar-tab"><span class="num-box">3</span> Check Quote</div>
+      <div class="progress-bar-tab"><span class="num-box">4</span> Order Placed</div>
+    </div>
+    <h3 class="cart-product-list">{{cartItemCount}} Products in cart</h3>
+    <div class="all-flex-box cart-products">
+      <div *ngFor="let item of cartItems" class="cart-item">
+        <div class="image-box"><img src="{{item.img}}" alt="Sweet Shop product" /></div>
+        <h4 class="product-title">{{item.name}}</h4>
+        <div class="cart-quantity">
+          <input type="number" value="{{item.qty}}" class="input-num">
+        </div>
+      </div>
+    </div>
+    <div class="cart-totals">
+      <div class="cart-total">
+        <div class="total-price">Cart Total <span><i class="fa fa-inr" aria-hidden="true"></i>{{grandTotal}}</span>
+        </div>
+        <div class="tax-price">tax <span><i class="fa fa-inr" aria-hidden="true"></i> 0.00</span></div>
+        <div class="shipping-cust">Shipping Charges <span><i class="fa fa-inr" aria-hidden="true"></i>0.00</span></div>
+      </div>
+      <div class="select-address">
+        <select>
+          <option>Select Address</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

@@ -80,7 +80,7 @@
           </div>
         </div>
       </div>
-      <a href="#" class="btn-2">View Menu</a>
+      <a href="javascript:;" class="btn-2">View Menu</a>
     </div>
 
   </section>
@@ -88,9 +88,7 @@
     <div class="wrapper">
       <h2>Popular <span>Sweets</span></h2>
       <div class="popular-products all-flex-box owl-carousel">
-
-        <app-product-card [product]="item" *ngFor="let item of products;"></app-product-card>
-
+        <div class="popular-product-list" app-product-card [product]="item"  *ngFor="let item of products;"></div>
       </div>
     </div>
   </section>

@@ -1,0 +1,39 @@
+<div class="breadcrumbs">
+  <div class="wrapper">
+    <a [routerLink]="['/']">Home</a> >
+    <a [routerLink]="['/product-list']">Product List</a> >
+    <a href="javascript:;">Product Detail</a>
+  </div>
+</div>
+
+<section class="content-row details-page">
+  <div class="wrapper" *ngIf="!loadingProduct">
+    <div class="product-image"><img src="{{product.img}}" alt="Sweet Shop product" /></div>
+    <div class="product-content">
+      <h2>Product Details</h2>
+      <h4>Product Descriptions</h4>
+      <p [innerHTML]="product.long_desc"></p>
+      <div class="quantity-box">
+        <label>Quantity</label>
+        <select>
+          <option>{{product.weight}}</option>
+        </select>
+      </div>
+      <div class="price-box">
+        <span class="offer-price"><i class="fa fa-inr" aria-hidden="true"></i>250</span>
+        <span class="reg-price"><i class="fa fa-inr" aria-hidden="true"></i>{{product.price}}</span>
+        <span class="offer-per">( 50% Off)</span>
+      </div>
+      <a (click)="addToCart(product)" class="btn-2">Add to Cart</a>
+    </div>
+  </div>
+</section>
+
+<section class="content-row popular-section">
+  <div class="wrapper">
+    <h2><span>You May</span> Allso Like</h2>
+    <div class="popular-products all-flex-box owl-carousel" *ngIf="!loadingRelatedProducts">
+      <div class="popular-product-list" app-product-card [product]="item" *ngFor="let item of relatedProducts;"></div>
+    </div>
+  </div>
+</section>

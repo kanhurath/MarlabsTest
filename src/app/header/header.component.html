@@ -24,7 +24,7 @@
       <aside class="header-right">
         <span class="respo_menu" (click)="toggleMenu();"><i class="fa fa-bars" aria-hidden="true"></i>MENU</span>
         <nav class="nav">
-          <div class="respo_close" (click)="toggleMenu();" *ngIf="showrResponsiveMenu">&#10006;</div>
+          <div class="respo_close" (click)="toggleMenu();" *ngIf="showrResponsiveMenuCloseBtn">&#10006;</div>
           <ul class="menu" [ngClass]="{'goright' : showrResponsiveMenu}">
             <li><a [routerLink]="['/']" routerLinkActive="router-link-active" >Home</a></li>
             <li><a [routerLink]="['/aboutus']" routerLinkActive="router-link-active" >About</a></li>
@@ -36,7 +36,27 @@
         <ul class="ecommerce-links" *ngIf="showrResponsiveMenu">
           <li><a [routerLink]="['/']"><img src="assets/img/ecommerce-icon1.png" alt="" /></a></li>
           <li><a [routerLink]="['/aboutus']"><img src="assets/img/ecommerce-icon2.png" alt="" /></a></li>
-          <li><a href="javascript:;"><img src="assets/img/ecommerce-icon3.png" alt="" /></a></li>
+          <li class="top-cart-icon">
+            <a href="javascript:;" (click)="showCart = !showCart"><img src="assets/img/ecommerce-icon3.png" alt="" /></a><span class="cart-num">{{cartItemCount}}</span>
+            <div class="mini-cart" *ngIf="showCart">
+              <ul>
+                  <li *ngFor="let item of cartItems">
+                      <h3 class="item-title">{{item.name}} (<i class="fa fa-inr" aria-hidden="true"></i>{{item.price}})</h3>
+                      <span class="close-icon" (click)="removeFromCart(item)">&times;</span>
+                      <span class="num-item"></span>
+                      <h4 class="item-price"><i class="fa fa-inr" aria-hidden="true"></i>{{item.total_price}}</h4>
+                      <p class="item-weight">{{item.qty}} X {{item.weight}}</p>
+                  </li>
+              </ul>
+              <div class="mini-cart-footer">
+                  <div class="cart-total">
+                      <span class="sub-total-label">Subtotal</span>
+                      <span class="total-price"><i class="fa fa-inr" aria-hidden="true"></i> {{grandTotal}}</span>
+                  </div>
+                  <div class="action-div"><a (click)="goToCheckout();" href="javascript:;" class="btn-5">View Cart & checkout</a></div>
+              </div>
+          </div>
+          </li>
         </ul>
       </aside>
     </div>

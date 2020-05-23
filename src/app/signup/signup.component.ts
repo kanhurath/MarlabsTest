@@ -15,6 +15,7 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup;
   loading = false;
   submitted = false;
+  showPassword = false;
   returnUrl: string;
   error = '';
   viewLoginModalRef: BsModalRef;
@@ -37,8 +38,8 @@ export class SignupComponent implements OnInit {
     this.signupForm = this.fb.group({
       mbnumber: ['', [Validators.required]],
       name: ['', [Validators.required]],
-      username: ['', [Validators.required]],
-      password: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]],
     });
 
     // get return url from route parameters or default to '/'
@@ -48,6 +49,11 @@ export class SignupComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() {
     return this.signupForm.controls;
+  }
+
+  toggleShowPassword() {
+    this.showPassword = !this.showPassword;
+    console.log(this.showPassword);
   }
 
   openLoginModal() {

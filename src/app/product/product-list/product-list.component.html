@@ -1,0 +1,12 @@
+<h1>{{heading}}</h1>
+<section class="content-row popular-section">
+  <div class="wrapper">
+    <h2>Popular <span>Sweets</span></h2>
+    <div class="popular-products all-flex-box owl-carousel">
+      <div app-product-card [product]="item"
+          *ngFor="let item of products;"
+          (adToCart)="adToCart($event)"
+          class="popular-product-list"></div>
+    </div>
+  </div>
+</section>

@@ -3,11 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MyAccountComponent } from './my-account/my-account.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { CheckoutComponent } from './checkout/checkout.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { CheckoutComponent } from './product/checkout/checkout.component';
 import { SignupComponent } from './signup/signup.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
