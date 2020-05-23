@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "marlabstest": {
+      "hosting": {
+        "MarlabsTest": [
+          "marlabstest"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "marlabstest"
+  }
+}
